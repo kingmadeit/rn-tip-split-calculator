@@ -1,0 +1,1 @@
+export { default as splashLoader } from './lottie/splash-lottie.json'

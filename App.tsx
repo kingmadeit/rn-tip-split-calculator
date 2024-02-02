@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
+import { useFonts } from 'expo-font';
+import { Home, Splash } from 'screens';
+
+// Keep the splash screen visible while we fetch resources
+// SplashScreen.preventAutoHideAsync();
+SplashScreen.hideAsync();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [appIsReady, setAppIsReady] = useState(false);
+  const [fontsLoaded] = useFonts({
+    PoppinsRegular: require('./assets/fonts/Poppins-Regular.ttf'),
+    PoppinsMedium: require('./assets/fonts/Poppins-Medium.ttf'),
+    PoppinsBold: require('./assets/fonts/Poppins-Bold.ttf'),
+  });
+  useEffect(() => {
+    if (fontsLoaded) setTimeout(() => setAppIsReady(true), 600);
+  }, [fontsLoaded]);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+  if (!appIsReady) return <Splash />;
+
+  return  <Home />
+}
