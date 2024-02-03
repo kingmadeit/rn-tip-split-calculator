@@ -21,10 +21,16 @@ type PickerProps = {
   active: string;
   onValueChange: (value: string) => void,
 }
-
+type NumberPadProps = {
+  amount: string;
+  setAmount:Dispatch<SetStateAction<string>>
+  
+}
 export {
   CalculatorType,
   TabsProp,
   CustomPickerProps,
-  PickerProps
+  PickerProps,
+  NumberPadProps
 }
+

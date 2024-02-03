@@ -3,21 +3,29 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.8,
     // backgroundColor: 'gray',
     width: '100%',
     flexDirection: 'row',
     // borderWidth: 1
+    justifyContent: 'flex-start',
+    // backgroundColor: 'pink'
+  },
+  iconWrapper: {
+    width: '100%',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: '53%',
+    right: '-15%'
   },
   pickerWrapper: {
     flex: 1,
-    // backgroundColor: 'gray'
     flexDirection: 'column',
   },
   picker: { 
     backgroundColor: 'transparent', 
     // flex: 1 , 
-    height: 100
+    height: 70
   }
 }
 )

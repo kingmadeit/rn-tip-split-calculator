@@ -3,8 +3,12 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
   footer: {
-    flex: 1,
-    padding: SIZES.medium
+    // flex: 1,
+    paddingLeft: SIZES.medium,
+    paddingRight: SIZES.medium,
+    flex: 0.8,
+    // backgroundColor: 'pink',
+    width: '100%'
   },
   calculateBtn: {
     flex: 1,

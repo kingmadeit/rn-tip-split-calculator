@@ -10,7 +10,9 @@ const CustomPicker = ({pickers}: CustomPickerProps) => {
   console.log('res')
   const _Picker = ({data, icon, active, onValueChange}: PickerProps) => (
     <View style={styles.pickerWrapper}>
-      <FontAwesome6 name={icon} size={24} color={COLORS.gray} />
+      <View style={styles.iconWrapper}>
+        <FontAwesome6 name={icon} size={SIZES.large} color={COLORS.darkGray} />
+      </View>
       <Picker
         style={styles.picker}
         selectedValue={active}

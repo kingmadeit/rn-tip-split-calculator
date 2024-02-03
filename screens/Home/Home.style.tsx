@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   intro: {
-    flex: 4,
+    flex: 3,
     width: '100%',
     backgroundColor: COLORS.secondary,
     // opacity: 0.3
@@ -24,15 +24,15 @@ const styles = StyleSheet.create({
   },
   main: {
     flex: 8,
-    padding: 16,
-    backgroundColor: COLORS.primary,
-    marginBottom: 20,
-    alignContent: 'center',
-    borderRadius: 20
-    // justifyContent: 'center'
+    paddingBottom: SIZES.medium,
+    // backgroundColor: COLORS.secondary,
+    alignItems: 'center',
+    borderRadius: 20,
   },
   foot: {
-    flex: 1
+    flex: 0.7,
+    backgroundColor: 'pink',
+    width: '100%'
   },
   introText: {
     color: '#fefefe',

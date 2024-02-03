@@ -2,7 +2,7 @@ import { View, Text, SafeAreaView, ScrollView, TextInput, FlatList, TouchableOpa
 import styles from './Home.style';
 import { COLORS } from '@/constants';
 import { SetStateAction, useMemo, useRef, useState } from 'react';
-import { CustomBottomSheet, CustomPicker, Footer, Tabs } from 'components';
+import { CustomBottomSheet, CustomPicker, Footer, NumberPad, Tabs } from 'components';
 import { CalculatorType, CustomPickerProps } from '@/types';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 
@@ -57,6 +57,7 @@ const Home = () => {
         {/* ***************************** main ***************************** */}
         <View style={styles.main}>
           {/* ***************************** tip picker ***************************** */}
+          <NumberPad amount={amount} setAmount={setAmount} />
           <CustomPicker pickers={pickerData.pickers} />
         </View>
         {/* ***************************** foot ***************************** */}

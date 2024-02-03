@@ -28,6 +28,7 @@ const Tabs = ({tabs, activeTab, setActiveTab}: TabsProp) => {
         )}
         keyExtractor={(item: CalculatorType) => item}
         showsHorizontalScrollIndicator={false}
+        scrollEnabled={false}
         contentContainerStyle={{columnGap: SIZES.medium }}
         horizontal
       />
