@@ -12,10 +12,19 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   intro: {
-    flex: 1
+    flex: 2,
+    width: '100%',
+    // backgroundColor: COLORS.tertiary,
+    // opacity: 0.3
+    borderBottomColor: COLORS.gray,
   },
   main: {
-    flex: 10
+    flex: 8,
+    backgroundColor: COLORS.secondary,
+    marginBottom: 20,
+    alignContent: 'center',
+    borderRadius: 20
+    // justifyContent: 'center'
   },
   foot: {
     flex: 1
@@ -25,34 +34,33 @@ const styles = StyleSheet.create({
     fontFamily: FONT.bold,
     fontSize: SIZES.xLarge
   },
-  tabs: {
-    // flex: .8,
-    // height: 50,
-    marginTop: SIZES.medium,
-    marginBottom: SIZES.medium,
-    alignContent: 'center',
-    alignItems: 'center',
-  },
-  tab: {
-    paddingVertical: SIZES.small / 3,
-    paddingHorizontal: SIZES.xLarge,
-    borderRadius: SIZES.medium,
-    borderWidth: 1,
-    // ...SHADOWS.medium,
-    shadowColor: COLORS.white,
-  },
-  tabText: {
-    fontFamily: FONT.medium,
-    fontSize: SIZES.medium
-  },
 
   textInputWrapper: {
-    // flex: 2
+    // flex: 5,
+    width: '100%',
+    backgroundColor: 'transparent',
+    marginTop: SIZES.small,
+    marginBottom: SIZES.medium,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: SIZES.medium,
+    height: 70,
+    color: COLORS.white,
   },
 
   pickerWrapper: {
     // flex: 1,
-    backgroundColor: 'gray'
+    // backgroundColor: 'gray'
+  },
+  input: {
+    fontFamily: FONT.bold,
+    width: "100%",
+    height: "100%",
+    paddingHorizontal: SIZES.medium,
+    fontSize: SIZES.xxLarge,
+    textAlign: 'center',
+    borderBottomColor: COLORS.gray,
+    // borderWidth: 1
   }
 });
 

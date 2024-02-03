@@ -1,8 +1,9 @@
 const COLORS = {
   primary: "#281734",
-  secondary: "#444262",
-  tertiary: "#FF7754",
-
+  secondary: "#18011f",
+  tertiary: "#a31242",
+  tertiary_: "#FF7754",
+  
   gray: "#83829A",
   gray2: "#C1C0C8",
   darkGray: '#626163',
@@ -10,7 +11,6 @@ const COLORS = {
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
 
-  btn: '#a31242'
 };
 
 const FONT = {

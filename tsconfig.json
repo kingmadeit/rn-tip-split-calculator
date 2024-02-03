@@ -4,7 +4,8 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@/constants": ["constants/index.tsx"]
+      "@/constants": ["constants/index.tsx"],
+      "@/types": ["types/index.ts"],
     }
   },
   "include": [
