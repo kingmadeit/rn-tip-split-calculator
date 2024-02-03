@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'gray',
     width: '100%',
     flexDirection: 'row',
-    borderWidth: 1
+    // borderWidth: 1
   },
   pickerWrapper: {
     flex: 1,

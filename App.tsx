@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import { Home, Splash } from 'screens';
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 // Keep the splash screen visible while we fetch resources
 // SplashScreen.preventAutoHideAsync();
 SplashScreen.hideAsync();
@@ -21,5 +22,11 @@ export default function App() {
 
   if (!appIsReady) return <Splash />;
 
-  return  <Home />
+  return  (
+    <GestureHandlerRootView style={{flex: 1}}>
+      <BottomSheetModalProvider>
+        <Home />
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
+  )
 }

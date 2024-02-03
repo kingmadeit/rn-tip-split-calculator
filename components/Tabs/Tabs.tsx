@@ -13,14 +13,14 @@ const Tabs = ({tabs, activeTab, setActiveTab}: TabsProp) => {
           <TouchableOpacity 
             style={{
               ...styles.tab, 
-              borderColor: activeTab === tab ? COLORS.secondary : '#5d5c5e',
               backgroundColor: activeTab === tab ? COLORS.tertiary : 'transparent',
+              opacity: activeTab === tab ? 1 : 0.7,
             }}
             onPress={() => setActiveTab(tab)}
           >
             <Text style={{
               ...styles.tabText, 
-              color: activeTab === tab ? COLORS.white : COLORS.darkGray
+              color: activeTab === tab ? COLORS.gray2 : COLORS.darkGray
               }}>
                 {tab}
               </Text>

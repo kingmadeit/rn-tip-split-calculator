@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.secondary,
     // opacity: 0.3
     borderBottomColor: COLORS.gray,
-    borderBottomLeftRadius: 100,
+    borderBottomLeftRadius: SIZES.radius.larger,
+    borderBottomRightRadius: SIZES.radius.larger,
     justifyContent: 'center',
     alignItems: 'center'
     // borderBottomRightRadius: SIZES.xxLarge,

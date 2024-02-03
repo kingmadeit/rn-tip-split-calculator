@@ -2,22 +2,20 @@ import { View, Text, SafeAreaView, ScrollView, TextInput, FlatList, TouchableOpa
 import styles from './Home.style';
 import { COLORS } from '@/constants';
 import { SetStateAction, useMemo, useRef, useState } from 'react';
-import { CustomPicker, Footer, Tabs } from 'components';
+import { CustomBottomSheet, CustomPicker, Footer, Tabs } from 'components';
 import { CalculatorType, CustomPickerProps } from '@/types';
-
-const people = [ ...Array(50).keys() ].map( i => `${i+1}`);
-const defaultTips = ['5', '10', '12', '14', '15', '18', '20', '25', '30', '35', '40', '45', '50'];
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
 
 const Home = () => {
   const calculatorTypes: CalculatorType[] = ['tip', 'split'];
+  const people = useMemo(() => [ ...Array(50).keys() ].map( i => `${i+1}`), []);
+  const defaultTips = useMemo(() => ['5', '10', '12', '14', '15', '18', '20', '25', '30', '35', '40', '45', '50'], []);
   const [activeTab, setActiveTab] = useState<CalculatorType>(calculatorTypes[0])
   const [amount, setAmount] = useState<string>('0');
   const [tip, setTip] = useState<string>(defaultTips[4]);
   const [party, setParty] = useState<string>(people[2]);
-  console.log('loadin...')
-
   
-  const pickerData = {
+  const pickerData: CustomPickerProps = {
     pickers: [
       {
         data: defaultTips, 
@@ -34,11 +32,16 @@ const Home = () => {
     ]
   };
 
-  console.log(pickerData.pickers)
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
+
+  const calculate = () => {
+    bottomSheetRef.current?.present()
+  }
   return (
     <>
     <SafeAreaView style={{flex: 0, backgroundColor: COLORS.secondary}}/>
     <SafeAreaView style={styles.container}>
+
       <View style={styles.contentWrapper}>
         {/* ***************************** intro ***************************** */}
         <View style={styles.intro}>
@@ -54,14 +57,16 @@ const Home = () => {
         {/* ***************************** main ***************************** */}
         <View style={styles.main}>
           {/* ***************************** tip picker ***************************** */}
-          <CustomPicker 
-            pickers={pickerData.pickers}
-          />
+          <CustomPicker pickers={pickerData.pickers} />
         </View>
         {/* ***************************** foot ***************************** */}
-        <Footer/>
+        <Footer handleCalculation={calculate}/>
       </View>
+
+
     </SafeAreaView>
+      {/* ***************************** bottom sheet ***************************** */}
+      <CustomBottomSheet ref={bottomSheetRef}/>
     </>
     
   )

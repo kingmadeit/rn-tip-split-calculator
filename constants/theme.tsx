@@ -10,8 +10,8 @@ const COLORS = {
   darkestGray: '##3a393b',
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
-  purplish: '#a64dab'
-
+  purplish: '#a64dab',
+  tab: '#b86781'
 };
 
 const FONT = {
@@ -28,7 +28,13 @@ const SIZES = {
   xLarge: 24,
   xxLarge: 32,
 
-  xxLargeFont: 70
+  xxLargeFont: 70,
+  radius: {
+    regular: 20,
+    medium: 30,
+    large: 50,
+    larger: 100
+  }
 };
 
 const SHADOWS = {

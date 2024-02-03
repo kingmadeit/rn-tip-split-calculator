@@ -2,7 +2,7 @@ import { COLORS, FONT, SHADOWS, SIZES } from "@/constants"
 import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
-  footer: {
+  foot: {
     flex: 1,
     padding: SIZES.medium
   },

@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // ...SHADOWS.medium,
     shadowColor: COLORS.white,
+    borderColor: COLORS.primary
   },
   tabText: {
     fontFamily: FONT.medium,
