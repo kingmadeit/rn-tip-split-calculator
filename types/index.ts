@@ -10,7 +10,21 @@ type TabsProp = {
   
 }
 
+
+type CustomPickerProps = {
+  pickers: PickerProps[]
+}
+
+type PickerProps = {
+  data: string[];
+  icon?: string;
+  active: string;
+  onValueChange: (value: string) => void,
+}
+
 export {
   CalculatorType,
-  TabsProp
+  TabsProp,
+  CustomPickerProps,
+  PickerProps
 }

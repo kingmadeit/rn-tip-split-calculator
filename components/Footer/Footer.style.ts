@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native"
 const styles = StyleSheet.create({
   foot: {
     flex: 1,
+    padding: SIZES.medium
   },
   calculateBtn: {
     flex: 1,

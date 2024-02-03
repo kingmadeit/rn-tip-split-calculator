@@ -7,20 +7,24 @@ const styles = StyleSheet.create({
   },
   contentWrapper: {
     flex: 1,
-    padding: 16,
     justifyContent: 'center',
     alignContent: 'center',
   },
   intro: {
-    flex: 2,
+    flex: 4,
     width: '100%',
-    // backgroundColor: COLORS.tertiary,
+    backgroundColor: COLORS.secondary,
     // opacity: 0.3
     borderBottomColor: COLORS.gray,
+    borderBottomLeftRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center'
+    // borderBottomRightRadius: SIZES.xxLarge,
   },
   main: {
     flex: 8,
-    backgroundColor: COLORS.secondary,
+    padding: 16,
+    backgroundColor: COLORS.primary,
     marginBottom: 20,
     alignContent: 'center',
     borderRadius: 20
@@ -31,37 +35,9 @@ const styles = StyleSheet.create({
   },
   introText: {
     color: '#fefefe',
-    fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge
+    fontFamily: FONT.medium,
+    fontSize: SIZES.xxLargeFont
   },
-
-  textInputWrapper: {
-    // flex: 5,
-    width: '100%',
-    backgroundColor: 'transparent',
-    marginTop: SIZES.small,
-    marginBottom: SIZES.medium,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: SIZES.medium,
-    height: 70,
-    color: COLORS.white,
-  },
-
-  pickerWrapper: {
-    // flex: 1,
-    // backgroundColor: 'gray'
-  },
-  input: {
-    fontFamily: FONT.bold,
-    width: "100%",
-    height: "100%",
-    paddingHorizontal: SIZES.medium,
-    fontSize: SIZES.xxLarge,
-    textAlign: 'center',
-    borderBottomColor: COLORS.gray,
-    // borderWidth: 1
-  }
 });
 
 export default styles

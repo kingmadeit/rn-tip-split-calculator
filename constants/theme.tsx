@@ -10,6 +10,7 @@ const COLORS = {
   darkestGray: '##3a393b',
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+  purplish: '#a64dab'
 
 };
 
@@ -26,6 +27,8 @@ const SIZES = {
   large: 20,
   xLarge: 24,
   xxLarge: 32,
+
+  xxLargeFont: 70
 };
 
 const SHADOWS = {
