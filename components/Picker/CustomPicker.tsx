@@ -3,12 +3,16 @@ import { Picker } from 'react-native-wheel-pick';
 
 import styles from './CustomPicker.style'
 import { COLORS, SIZES } from '@/constants';
-import { CustomPickerProps, PickerProps } from '@/types';
+import { PickerProps } from '@/types';
 import { FontAwesome6 } from '@expo/vector-icons';
+import { memo, useCallback } from 'react';
 
-const CustomPicker = ({pickers}: CustomPickerProps) => {
-  console.log('res')
-  const _Picker = ({data, icon, active, onValueChange}: PickerProps) => (
+const CustomPicker = ({data, icon, active, onValueChange}: PickerProps) => {
+  console.log(`${icon} picker rendered!`)
+
+  const valueChanged = useCallback(onValueChange, []);
+
+  return (
     <View style={styles.pickerWrapper}>
       <View style={styles.iconWrapper}>
         <FontAwesome6 name={icon} size={SIZES.large} color={COLORS.darkGray} />
@@ -24,27 +28,10 @@ const CustomPicker = ({pickers}: CustomPickerProps) => {
         isShowSelectLine={false}
         selectLineColor={COLORS.gray2}
         pickerData={data}
-        onValueChange={onValueChange}
+        onValueChange={valueChanged}
       />
-    </View>
-
-
-  )
-
-  return (
-    <View style={styles.container}>
-      {pickers.map((picker: PickerProps, i: number) => (
-        <_Picker 
-          key={`${picker.icon}-${i}`} 
-          data={picker.data} 
-          icon={picker.icon}
-          active={picker.active}
-          onValueChange={(value: string) => picker.onValueChange(value)} 
-        />
-
-      ))}
     </View>
   )
 }
 
-export default CustomPicker
+export default memo(CustomPicker)

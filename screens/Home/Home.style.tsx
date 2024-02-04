@@ -39,6 +39,15 @@ const styles = StyleSheet.create({
     fontFamily: FONT.medium,
     fontSize: SIZES.xxLargeFont
   },
+  pickerContainer: {
+    flex: 0.85,
+    // backgroundColor: 'gray',
+    width: '100%',
+    flexDirection: 'row',
+    // borderWidth: 1
+    justifyContent: 'flex-start',
+    // backgroundColor: 'pink'
+  },
 });
 
 export default styles

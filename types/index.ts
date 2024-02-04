@@ -26,11 +26,32 @@ type NumberPadProps = {
   setAmount:Dispatch<SetStateAction<string>>
   
 }
+
+type TTipResult = {
+  tip: string;
+  amount: string;
+}
+
+type ResultProps = {
+  results: TTipResult[] | number;
+}
+
+enum ETabs {
+  tip='tip',
+  split='split'
+}
+
 export {
+  /// TYPES
   CalculatorType,
   TabsProp,
   CustomPickerProps,
   PickerProps,
-  NumberPadProps
+  NumberPadProps,
+  TTipResult,
+  ResultProps,
+
+  /// ENUMS
+  ETabs
 }
 

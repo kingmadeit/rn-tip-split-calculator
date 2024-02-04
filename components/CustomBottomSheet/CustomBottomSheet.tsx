@@ -1,15 +1,25 @@
 import { View, Text, Button } from 'react-native'
 import {
+  BottomSheetBackdrop,
   BottomSheetModal,
   BottomSheetModalProvider,
 } from '@gorhom/bottom-sheet'
 import styles from './CustomBottomSheet.style'
 import { forwardRef, useCallback, useMemo, useRef } from 'react';
 import { COLORS, SIZES } from 'constants/theme';
+import { TipResults, SplitResults, NoResults } from 'components';
+import { ETabs, TTipResult } from '@/types';
 
 export type Ref = BottomSheetModal;
+export type Results = {
+  amountEntered: string,
+  selectedTip?: string,
+  selectedParty?: string
+  amountCalculated: number | {tip: string, amount: string}[],
+  activeTab: string,
+}
 
-const CustomBottomSheet = forwardRef<Ref>((props, ref) => {
+const CustomBottomSheet = forwardRef<Ref, Results>(({amountEntered, activeTab, amountCalculated}: Results, ref) => {
   // ref
   // const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
@@ -24,7 +34,17 @@ const CustomBottomSheet = forwardRef<Ref>((props, ref) => {
     console.log('handleSheetChanges', index);
   }, []);
 
-  console.log(ref)
+  console.log(activeTab)
+  const displayResults = () => {
+    if (+amountEntered === 0) return <NoResults />
+    
+    switch (activeTab) {
+      case ETabs.tip: return <TipResults results={(amountCalculated as TTipResult[])}/>
+      case ETabs.split: return <SplitResults results={(amountCalculated as number)}/>
+      default: break;
+    }
+  }
+
 
   // renders
   return (
@@ -41,7 +61,7 @@ const CustomBottomSheet = forwardRef<Ref>((props, ref) => {
       style={styles.container}
     >
       <View style={styles.contentContainer}>
-        <Text style={{color: 'white'}}>Awesome 🎉</Text>
+        { displayResults() }
       </View>
     </BottomSheetModal>
 
